@@ -12,7 +12,7 @@ import FilterSort from '../components/FilterSort';
 import Tutorial from '../components/Tutorial';
 import { UserContext } from '../context/UserContext';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyDtIuwKZLXp7ZiMkH6R9pjrzMmUOKLzizI'; // Replace with your actual API key
+const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY; // Replace with your actual API key
 
 const Home = () => {
   const [carparks, setCarparks] = useState([]);
