@@ -43,7 +43,7 @@ const History = () => {
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-2xl font-bold mb-4">Parking History</h1>
-      {parkingHistory ? (
+      {parkingHistory.length >= 0 ? (
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white">
             <thead>
@@ -91,9 +91,9 @@ const History = () => {
                       ) : (
                         <button
                           onClick={handleCheckOut}
-                          className="bg-red-500 text-white px-4 py-2 rounded mt-4"
+                          className="bg-[#b48170] text-white px-4 py-2 rounded mt-4"
                         >
-                          Check Out
+                          Check Out Now
                         </button>
                       )}
                     </td>

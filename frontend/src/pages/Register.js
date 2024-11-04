@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 
@@ -34,7 +34,7 @@ const Register = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10">
+    <div className="max-w-md mx-auto mt-[20vh]">
       <h2 className="text-2xl font-bold mb-5">Create Account</h2>
       {error && <p className="text-red-500 mb-5">{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -79,17 +79,11 @@ const Register = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600"
+          className="w-full bg-[#70b49c] text-white py-2 rounded hover:opacity-70"
         >
           Sign up
         </button>
       </form>
-      <p className="mt-4 text-center">
-        Already have an account?{' '}
-        <Link to="/login" className="text-blue-500">
-          Sign In
-        </Link>
-      </p>
     </div>
   );
 };

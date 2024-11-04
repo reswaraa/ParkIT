@@ -118,26 +118,26 @@ const CarParkDetailPage = () => {
       <p>Night Parking: {carpark.night_parking}</p>
 
       {isCheckedIn ? (
-        <div>
+        <>
           <p>Checked in at: {checkInTime.toLocaleString()}</p>
           <button
             onClick={handleCheckOut}
-            className="bg-red-500 text-white px-4 py-2 rounded mt-4"
+            className="bg-[#b48170] text-white px-4 py-2 rounded mt-4"
           >
             Check Out
           </button>
-        </div>
+        </>
       ) : (
         <button
           onClick={handleCheckIn}
-          className="bg-green-500 text-white px-4 py-2 rounded mt-4"
+          className="bg-[#70b49c] text-white px-4 py-2 rounded mt-4 hover:opacity-70"
         >
           Check In
         </button>
       )}
       <button
         onClick={handleDirections}
-        className="bg-blue-500 text-white px-4 py-2 rounded mt-4 ml-4"
+        className="bg-[#707ab4] text-white px-4 py-2 rounded mt-4 ml-4 hover:opacity-70"
       >
         Get Directions
       </button>

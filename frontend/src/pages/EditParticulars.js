@@ -82,7 +82,7 @@ const EditParticulars = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          className="bg-[#707ab4] text-white py-2 px-4 rounded hover:opcaity-70"
         >
           Change Password
         </button>
