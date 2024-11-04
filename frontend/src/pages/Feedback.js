@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 
+const baseurl = process.env.REACT_APP_API_URL;
+
 const Feedback = () => {
   const [feedback, setFeedback] = useState('');
   const [image, setImage] = useState(null);
@@ -20,15 +22,11 @@ const Feedback = () => {
     if (video) formData.append('video', video);
 
     try {
-      const response = await axios.post(
-        'http://localhost:5001/api/feedback',
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-      );
+      const response = await axios.post(`${baseurl}/api/feedback`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       setMessage('Feedback submitted successfully!');
       setFeedback('');
       setImage(null);

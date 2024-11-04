@@ -4,6 +4,8 @@ import { fetchCarparks, fetchCarparkInfo } from '../services/api';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 
+const baseurl = process.env.REACT_APP_API_URL;
+
 const CarParkDetailPage = () => {
   const [carpark, setCarpark] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +48,7 @@ const CarParkDetailPage = () => {
     const fetchCheckInStatus = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/checkin/${user._id}/${carparkId}`
+          `${baseurl}/api/checkin/${user._id}/${carparkId}`
         );
         if (response.data.isCheckedIn) {
           setIsCheckedIn(true);
@@ -64,7 +66,7 @@ const CarParkDetailPage = () => {
 
   const handleCheckIn = async () => {
     try {
-      const response = await axios.post('http://localhost:5001/api/checkin', {
+      const response = await axios.post(`${baseurl}/api/checkin`, {
         userId: user._id,
         carparkId: carpark.carpark_number,
         checkInTime: new Date(),
@@ -81,7 +83,7 @@ const CarParkDetailPage = () => {
 
   const handleCheckOut = async () => {
     try {
-      const response = await axios.post('http://localhost:5001/api/checkout', {
+      const response = await axios.post(`${baseurl}/api/checkout`, {
         userId: user._id,
         carparkId: carpark.carpark_number,
         checkOutTime: new Date(),

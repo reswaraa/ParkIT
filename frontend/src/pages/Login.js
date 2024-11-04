@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 
+const baseurl = process.env.REACT_APP_API_URL;
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,13 +15,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        'http://localhost:5001/api/auth/login',
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${baseurl}/api/auth/login`, {
+        email,
+        password,
+      });
       const userData = response.data;
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);

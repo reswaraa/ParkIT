@@ -3,6 +3,8 @@ import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 import { Link } from 'react-router-dom';
 
+const baseurl = process.env.REACT_APP_API_URL;
+
 const History = () => {
   const [parkingHistory, setParkingHistory] = useState([]);
   const { user } = useContext(UserContext);
@@ -11,7 +13,7 @@ const History = () => {
     const fetchParkingHistory = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/parking-history/${user._id}`
+          `${baseurl}/api/parking-history/${user._id}`
         );
         setParkingHistory(response.data);
       } catch (error) {
@@ -60,7 +62,7 @@ const History = () => {
                 const handleCheckOut = async () => {
                   try {
                     const response = await axios.post(
-                      'http://localhost:5001/api/checkout',
+                      `${baseurl}/api/checkout`,
                       {
                         userId: user._id,
                         carparkId: entry.carparkId,

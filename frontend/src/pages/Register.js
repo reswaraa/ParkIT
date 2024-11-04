@@ -5,6 +5,8 @@ import { UserContext } from '../context/UserContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const baseurl = process.env.REACT_APP_API_URL;
+
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -41,14 +43,11 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post(
-        'http://localhost:5001/api/auth/register',
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${baseurl}/api/auth/register`, {
+        name,
+        email,
+        password,
+      });
       const userData = response.data;
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);

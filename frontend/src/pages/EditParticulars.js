@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
 
+const baseurl = process.env.REACT_APP_API_URL;
+
 const EditParticulars = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -20,7 +22,7 @@ const EditParticulars = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5001/api/auth/users/${user._id}/change-password`,
+        `${baseurl}/api/auth/users/${user._id}/change-password`,
         {
           currentPassword,
           newPassword,

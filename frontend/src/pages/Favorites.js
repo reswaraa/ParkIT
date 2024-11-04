@@ -4,6 +4,8 @@ import { UserContext } from '../context/UserContext';
 import CarParkDetails from '../components/CarParkDetails';
 import { fetchCarparks, fetchCarparkInfo } from '../services/api';
 
+const baseurl = process.env.REACT_APP_API_URL;
+
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +15,7 @@ const Favorites = () => {
     try {
       setIsLoading(true);
       const favoriteIds = await axios.get(
-        `http://localhost:5001/api/favorites/${user._id}`
+        `${baseurl}/api/favorites/${user._id}`
       );
       const [allCarparks, allCarparkInfo] = await Promise.all([
         fetchCarparks(),
