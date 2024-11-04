@@ -93,7 +93,7 @@ const Feedback = () => {
           Submit Feedback
         </button>
       </form>
-      {message && <p className="mt-4 text-green-500">{message}</p>}
+      {message && <p className="mt-4 text-[#70b49c]">{message}</p>}
     </div>
   );
 };
