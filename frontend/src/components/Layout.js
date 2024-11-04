@@ -38,7 +38,7 @@ const Layout = ({ children, user, onLogout }) => {
           <>
             <div className="absolute inset-0 bg-emerald-600/40"></div>
             <img
-              src="/bg-starting-page.png"
+              src="bg-starting-page.png"
               alt="Map background"
               className="object-cover w-full h-full opacity-10"
             />
