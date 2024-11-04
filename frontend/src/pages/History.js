@@ -39,11 +39,11 @@ const History = () => {
     const durationHours = (end - start) / (1000 * 60 * 60);
     return (durationHours * rate).toFixed(2);
   };
-
+  console.log(parkingHistory.length);
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-2xl font-bold mb-4">Parking History</h1>
-      {parkingHistory.length >= 0 ? (
+      {parkingHistory.length > 0 ? (
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white">
             <thead>
