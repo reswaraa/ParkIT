@@ -38,7 +38,7 @@ const Layout = ({ children, user, onLogout }) => {
           <>
             <div className="absolute inset-0 bg-emerald-600/40"></div>
             <img
-              src="bg-starting-page.png"
+              src="/static/images/bg-starting-page.png"
               alt="Map background"
               className="object-cover w-full h-full opacity-10"
             />
@@ -53,7 +53,7 @@ const Layout = ({ children, user, onLogout }) => {
           to="/"
         >
           <img
-            src="parking-icon.svg"
+            src="static/images/parking-icon.svg"
             alt="ParkIT!"
             className="w-10 h-10 mr-3"
           />
