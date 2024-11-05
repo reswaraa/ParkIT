@@ -40,8 +40,6 @@ const Favorites = () => {
   };
 
   useEffect(() => {
-    fetchFavorites();
-
     if (user) {
       fetchFavorites();
     }
