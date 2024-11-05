@@ -17,7 +17,11 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: ['https://park-it-ashy.vercel.app', 'http://localhost:3000'], // List allowed origins
+    origin: [
+      'https://park-it-ashy.vercel.app',
+      'http://localhost:3000',
+      'https://api.data.gov.sg/v1/transport/carpark-availability',
+    ], // List allowed origins
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // List allowed methods
     credentials: true, // If you need to allow cookies or authentication
   })
