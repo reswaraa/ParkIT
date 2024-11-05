@@ -40,10 +40,8 @@ const Favorites = () => {
   };
 
   useEffect(() => {
-    if (user) {
-      fetchFavorites();
-    }
-  }, [user]);
+    fetchFavorites();
+  });
 
   const handleRemoveFavorite = async (carparkId) => {
     try {
