@@ -50,7 +50,7 @@ const Favorites = () => {
   const handleRemoveFavorite = async (carparkId) => {
     try {
       setFavorites(favorites.filter((fav) => fav.car_park_no !== carparkId));
-      await axios.post('http://localhost:5001/api/favorites/remove', {
+      await axios.post(`${baseurl}/api/favorites/remove`, {
         userId: user._id,
         carparkId,
       });
